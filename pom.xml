@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>bell.yusipov</groupId>
+    <artifactId>Broker</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>adminApi</module>
+        <module>yahooWeather</module>
+        <module>dtoModule</module>
+        <module>dbModule</module>
+        <module>WeatherService</module>
+    </modules>
+
+    <properties>
+        <java>1.8</java>
+        <junit-version>4.12</junit-version>
+        <wildfly-maven-version>2.0.0.Final</wildfly-maven-version>
+        <javax-servlet>3.1.0</javax-servlet>
+        <jboss-jms>1.0.0.Final</jboss-jms>
+        <javax-enteprise>2.0</javax-enteprise>
+        <javax-ejb>3.0</javax-ejb>
+        <spring>5.1.4.RELEASE</spring>
+        <jackson>2.9.4</jackson>
+        <javax-ejb>3.0</javax-ejb>
+        <mockito>2.0.2-beta</mockito>
+        <java-persistence>2.2</java-persistence>
+        <hibernate-core>5.4.1.Final</hibernate-core>
+        <orika>1.5.2</orika>
+        <hessian>4.0.38</hessian>
+        <activemq>5.15.8</activemq>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+
+            <!-- Java EE -->
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>${javax-enteprise}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax-servlet}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.spec.javax.jms</groupId>
+                <artifactId>jboss-jms-api_2.0_spec</artifactId>
+                <version>${jboss-jms}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.ejb</groupId>
+                <artifactId>ejb-api</artifactId>
+                <version>${javax-ejb}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Spring -->
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-remoting</artifactId>
+                <version>2.0.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring}</version>
+            </dependency>
+
+            <!-- Mapping -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson}</version>
+            </dependency>
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika}</version>
+            </dependency>
+
+            <!-- Hibernate -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${java-persistence}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate-core}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Support -->
+            <dependency>
+                <groupId>org.reactivestreams</groupId>
+                <artifactId>reactive-streams</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${hessian}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-broker</artifactId>
+                <version>${activemq}</version>
+            </dependency>
+
+            <!-- Тесты -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java}</source>
+                        <target>${java}</target>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>${wildfly-maven-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
