@@ -9,9 +9,9 @@ import java.util.List;
  * Интерфейс контроллера получения погоды
  */
 public interface WeatherController {
+
     /**
      * Получение данных о погоде города
-     *
      * @param location - город
      * @return объект с информацией о погоде
      */
@@ -19,7 +19,6 @@ public interface WeatherController {
 
     /**
      * Получение списка горов
-     *
      * @return List список с названиями городов
      */
     List<View> list();

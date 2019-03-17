@@ -1,6 +1,6 @@
 package bell.usipov.broker.weatherservice.service;
 
-import bell.usipov.broker.weatherservice.service.WeatherServiceImpl;
+
 import bell.usipov.broker.dtomodule.model.DtoWeather;
 import bell.usipov.broker.dtomodule.service.GetWeatherData;
 import org.junit.Assert;
@@ -14,6 +14,9 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
+/**
+ * Тестирование сервиса
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class WeatherServiceTest {
 
@@ -40,7 +43,7 @@ public class WeatherServiceTest {
     }
 
     /**
-     * Тестирование при null параметре
+     * Тестирование при null
      */
     @Test
     public void nullGetTest(){

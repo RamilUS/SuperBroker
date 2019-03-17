@@ -11,10 +11,8 @@ import java.util.List;
  */
 public interface WeatherService {
 
-
     /**
      * Получение погоды по названию города
-     *
      * @param location название города
      * @return объект с данными о погоде
      */
@@ -22,7 +20,6 @@ public interface WeatherService {
 
     /**
      * Получение списка доступных городов
-     *
      * @return List список названий городов
      */
     List<View> list();

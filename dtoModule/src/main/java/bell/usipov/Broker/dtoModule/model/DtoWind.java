@@ -8,10 +8,6 @@ import java.util.Objects;
  */
 public class DtoWind implements Serializable {
 
-    public DtoWind() {
-
-    }
-
     /**
      * Сила ветра
      */
@@ -26,6 +22,10 @@ public class DtoWind implements Serializable {
      * Скорость
      */
     private Double speed;
+
+    public DtoWind() {
+
+    }
 
     public Integer getChill() {
         return chill;

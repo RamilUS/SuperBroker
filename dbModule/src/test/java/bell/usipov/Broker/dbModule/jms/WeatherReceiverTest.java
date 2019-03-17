@@ -1,6 +1,6 @@
-package bell.usipov.broker.dbmodule;
+package bell.usipov.broker.dbmodule.jms;
 
-import bell.usipov.broker.dbmodule.jms.WeatherReceiver;
+
 import bell.usipov.broker.dbmodule.service.WeatherService;
 import bell.usipov.broker.dtomodule.model.DtoWeather;
 import org.junit.Assert;
@@ -25,7 +25,6 @@ public class WeatherReceiverTest {
 
     @InjectMocks
     private WeatherReceiver weatherReceiver;
-
 
     /**
      * Проверка инъекции

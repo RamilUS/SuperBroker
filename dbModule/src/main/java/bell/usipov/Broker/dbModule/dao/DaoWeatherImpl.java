@@ -13,6 +13,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ * {@inheritDoc}
+ */
 @Service
 public class DaoWeatherImpl implements DaoWeather {
 
@@ -89,7 +92,6 @@ public class DaoWeatherImpl implements DaoWeather {
 
     /**
      * Проверка на null значений в переданном объекте
-     *
      * @param weather - проверяемый объект
      * @return true, если переданное значение == null. false - если переданное значение != null
      */
@@ -106,7 +108,6 @@ public class DaoWeatherImpl implements DaoWeather {
 
     /**
      * Установка зависимостей в зависимые объекты
-     *
      * @param weather - объект данных о погоде
      */
     private void setDependencies(Weather weather) {

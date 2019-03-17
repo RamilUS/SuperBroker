@@ -17,6 +17,9 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
+/**
+ * Тестирование контролерров
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class WeatherControllerTest {
 

@@ -8,7 +8,6 @@ import java.util.Objects;
  */
 public class DtoForecast implements Serializable {
 
-
     /**
      * День недели
      */

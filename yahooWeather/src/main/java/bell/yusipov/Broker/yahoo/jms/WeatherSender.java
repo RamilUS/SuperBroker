@@ -10,9 +10,7 @@ public interface WeatherSender {
 
     /**
      * Отправка сообщения jms
-     *
      * @param weather -объект сообщения
      */
-
     void send(DtoWeather weather);
 }

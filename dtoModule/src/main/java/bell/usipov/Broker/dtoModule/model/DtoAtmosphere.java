@@ -7,6 +7,7 @@ import java.util.Objects;
  * Атмосфера
  */
 public class DtoAtmosphere implements Serializable {
+
     /**
      * Влажность
      */

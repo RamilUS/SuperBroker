@@ -10,15 +10,18 @@ import java.util.Objects;
  * Модель погоды согластно структуре ответа Yahoo
  */
 public class DtoWeather implements Serializable {
+
     /**
      * Широта
      */
     private DtoLocation location;
+
     /**
      * Текущая погода
      */
     @JsonProperty("current_observation")
     private DtoObservation currentObservation;
+
     /**
      * Прогноз на неделю
      */

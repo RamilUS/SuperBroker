@@ -10,9 +10,9 @@ import javax.jms.Queue;
 /**
  * Класс для отправки jms сообщений в очередь
  */
-
 @ApplicationScoped
 public class CitySenderImpl implements CitySender {
+
     /**
      * Очередь для jms сообщений, зарегистрированная на сервере по JNDI
      */
@@ -28,10 +28,8 @@ public class CitySenderImpl implements CitySender {
 
     /**
      * Отправка полученного названия города в jms очередь на сервере
-     *
      * @param city - текст с названием города
      */
-
     public void send(String city) {
 
         if (city == null || city.isEmpty()) {

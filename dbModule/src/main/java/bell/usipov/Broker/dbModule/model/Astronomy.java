@@ -22,7 +22,6 @@ public class Astronomy implements Serializable {
     @Version
     private Integer version;
 
-
     /**
      * Рассвет
      */

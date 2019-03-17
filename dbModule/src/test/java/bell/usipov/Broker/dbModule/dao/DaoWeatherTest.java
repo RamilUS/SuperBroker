@@ -1,6 +1,4 @@
-package bell.usipov.broker.dbmodule;
-
-import bell.usipov.broker.dbmodule.dao.DaoWeatherImpl;
+package bell.usipov.broker.dbmodule.dao;
 
 import bell.usipov.broker.dbmodule.model.*;
 import org.junit.Before;
@@ -24,6 +22,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
+/**
+ * Проверка Дао класса
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class DaoWeatherTest {
     @Mock
@@ -42,7 +43,7 @@ public class DaoWeatherTest {
     private Condition condition;
 
     @Before
-    public void set(){
+    public void set() {
         weather = mock(Weather.class);
         observation = mock(Observation.class);
         astronomy = mock(Astronomy.class);
@@ -67,10 +68,10 @@ public class DaoWeatherTest {
     }
 
     /**
-     * Проверка инъекций
+     * Проверка на null
      */
     @Test
-    public void checkNull(){
+    public void checkNull() {
         assertNotNull(entityManager);
         assertNotNull(DaoWeather);
     }
@@ -79,7 +80,7 @@ public class DaoWeatherTest {
      * Тестирование метода сохранения данных в БД
      */
     @Test
-    public void saveTest(){
+    public void saveTest() {
 
         DaoWeather.save(weather);
 
@@ -96,7 +97,7 @@ public class DaoWeatherTest {
      * Тестирование добавления при null параметре
      */
     @Test
-    public void nullSaveTest(){
+    public void nullSaveTest() {
         Weather weather = null;
 
         DaoWeather.save(weather);
@@ -108,7 +109,7 @@ public class DaoWeatherTest {
      * Тестирование обновления данных
      */
     @Test
-    public void updateTest(){
+    public void updateTest() {
 
         DaoWeather.update(weather);
 
@@ -119,7 +120,7 @@ public class DaoWeatherTest {
      * Тестирование обновления при null параметре
      */
     @Test
-    public void nullUpdateTest(){
+    public void nullUpdateTest() {
         Weather weather = null;
 
         DaoWeather.update(weather);
@@ -128,10 +129,10 @@ public class DaoWeatherTest {
     }
 
     /**
-     * Тестирование получение данных по нахванию города
+     * Проверка получения данных по нахванию города
      */
     @Test
-    public void getTest(){
+    public void getTest() {
         CriteriaBuilder criteriaBuilder = mock(CriteriaBuilder.class);
         CriteriaQuery criteriaQuery = mock(CriteriaQuery.class);
         Root root = mock(Root.class);
@@ -157,7 +158,7 @@ public class DaoWeatherTest {
      * Тестирование получения данных при null параметре
      */
     @Test
-    public void nullGetTest(){
+    public void nullGetTest() {
         String nullLocation = null;
 
         Weather weather = DaoWeather.get(nullLocation);
@@ -170,7 +171,7 @@ public class DaoWeatherTest {
      * Тестирование получения данных при пустом параметре
      */
     @Test
-    public void emptyTest(){
+    public void emptyTest() {
         String emptyLocation = "";
 
         Weather weather = DaoWeather.get(emptyLocation);
@@ -183,7 +184,7 @@ public class DaoWeatherTest {
      * Тестирование получение списка доступных городов
      */
     @Test
-    public void listTest(){
+    public void listTest() {
         CriteriaBuilder criteriaBuilder = mock(CriteriaBuilder.class);
         CriteriaQuery criteriaQuery = mock(CriteriaQuery.class);
         Root root = mock(Root.class);

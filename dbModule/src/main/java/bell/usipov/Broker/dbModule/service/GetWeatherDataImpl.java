@@ -13,10 +13,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * {@inheritDoc}
+ */
 @Service
 public class GetWeatherDataImpl implements GetWeatherData {
-    private final DaoWeather daoWeather;
 
+    private final DaoWeather daoWeather;
     private final MapperFactory mapperFactory;
 
     @Autowired

@@ -7,6 +7,7 @@ import java.util.Objects;
  * Астрономия
  */
 public class DtoAstronomy implements Serializable {
+
     /**
      * Рассвет
      */

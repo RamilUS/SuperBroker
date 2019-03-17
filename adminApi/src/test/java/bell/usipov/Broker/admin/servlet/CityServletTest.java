@@ -20,7 +20,9 @@ import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
-
+/**
+ * Проверка CityServlet
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class CityServletTest {
 
@@ -35,7 +37,6 @@ public class CityServletTest {
 
     /**
      * Проверка метода doPost при правильно введеных данных
-     *
      * @throws ServletException иссключение метода doPost
      * @throws IOException      иссключение метода doPost
      */
@@ -61,7 +62,6 @@ public class CityServletTest {
 
     /**
      * Проверка при пустом названии города
-     *
      * @throws ServletException иссключение метода doPost
      * @throws IOException      иссключение метода doPost
      */

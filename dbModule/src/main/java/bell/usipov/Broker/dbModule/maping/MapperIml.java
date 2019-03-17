@@ -25,7 +25,6 @@ public class MapperIml implements Mapper {
     /**
      * {@inheritDoc}
      */
-
     @Override
     public <O, T> void map(O object, T target) {
 

@@ -16,7 +16,6 @@ public class DtoCondition implements Serializable {
     /**
      * Код
      */
-
     private Integer code;
 
     /**
