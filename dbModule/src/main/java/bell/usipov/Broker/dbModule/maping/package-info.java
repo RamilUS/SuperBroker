@@ -1,4 +1,4 @@
 /**
  * Пакет классов для маппинга
  */
-package bell.usipov.Broker.dbModule.maping;
+package bell.usipov.broker.dbmodule.maping;

@@ -1,4 +1,4 @@
 /**
  * Пакет модуля БД
  */
-package bell.usipov.Broker.dbModule;
+package bell.usipov.broker.dbmodule;

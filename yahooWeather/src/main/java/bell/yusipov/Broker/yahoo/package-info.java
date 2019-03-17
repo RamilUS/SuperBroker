@@ -2,4 +2,4 @@
  * Пакет модуля YAHOO
  */
 
-package bell.yusipov.Broker.yahoo;
+package bell.yusipov.broker.yahoo;

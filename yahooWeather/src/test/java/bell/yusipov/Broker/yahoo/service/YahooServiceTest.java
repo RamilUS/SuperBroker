@@ -1,8 +1,8 @@
-package bell.yusipov.Broker.yahoo.service;
+package bell.yusipov.broker.yahoo.service;
 
 
-import bell.usipov.Broker.dtoModule.model.DtoWeather;
-import bell.yusipov.Broker.yahoo.JSM.WeatherSender;
+import bell.usipov.broker.dtomodule.model.DtoWeather;
+import bell.yusipov.broker.yahoo.jms.WeatherSender;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Before;
@@ -84,17 +84,17 @@ public class YahooServiceTest {
      * Проверка объектов теста на null
      */
     @Before
-    public void checkNull(){
+    public void checkNull() {
         Assert.assertNotNull(yahooServiceImpl);
         Assert.assertNotNull(weatherSender);
-        Assert.assertNotNull(yahooRequest );
+        Assert.assertNotNull(yahooRequest);
     }
 
     /**
      * Тестирование метода отправки запроса в Yahoo
      */
     @Test
-    public void requestTest(){
+    public void requestTest() {
         String location = "Moscow";
         DtoWeather weather = mock(DtoWeather.class);
 
@@ -112,7 +112,7 @@ public class YahooServiceTest {
      * Проверка запроса при null параметре
      */
     @Test
-    public void nullRequestTest(){
+    public void nullRequestTest() {
         String nullLocation = null;
 
         yahooServiceImpl.request(nullLocation);
@@ -124,7 +124,7 @@ public class YahooServiceTest {
      * Проверка запроса при пустом параметре
      */
     @Test
-    public void emptyRequestTest(){
+    public void emptyRequestTest() {
         String emptyLocation = "";
 
         yahooServiceImpl.request(emptyLocation);
@@ -151,7 +151,7 @@ public class YahooServiceTest {
      * Проверка маппинга при null параметре
      */
     @Test
-    public void nullMappingTest(){
+    public void nullMappingTest() {
         String nullString = null;
         DtoWeather weatherDto = yahooServiceImpl.jsonToObject(nullString);
 
@@ -162,7 +162,7 @@ public class YahooServiceTest {
      * Проверка маппинга при пустом параметре
      */
     @Test
-    public void emptyMappingTest(){
+    public void emptyMappingTest() {
         String emptyString = "";
         DtoWeather weatherDto = yahooServiceImpl.jsonToObject(emptyString);
 
@@ -173,7 +173,7 @@ public class YahooServiceTest {
      * Тестирование отправки объекта WeatherDto через jmsSender
      */
     @Test
-    public void sendJmsTest(){
+    public void sendJmsTest() {
 
         DtoWeather weather = new DtoWeather();
 
@@ -186,7 +186,7 @@ public class YahooServiceTest {
      * Проверка игнорирования null параметра
      */
     @Test
-    public void nullSendTest(){
+    public void nullSendTest() {
         DtoWeather weatherDto = null;
 
         yahooServiceImpl.sendWeather(weatherDto);

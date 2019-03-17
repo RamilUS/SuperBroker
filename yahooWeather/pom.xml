@@ -38,8 +38,8 @@
            <artifactId>spring-web</artifactId>
        </dependency>
        <dependency>
-           <groupId>bell.yusipov.dtomodule</groupId>
-           <artifactId>DTOmodule</artifactId>
+           <groupId>bell.yusipov.broker.dtomodule</groupId>
+           <artifactId>dtoModule</artifactId>
            <version>1.0-SNAPSHOT</version>
            <scope>compile</scope>
        </dependency>

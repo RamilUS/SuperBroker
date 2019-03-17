@@ -1,4 +1,4 @@
-package bell.usipov.Broker.admin.jms;
+package bell.usipov.broker.admin.jms;
 
 
 

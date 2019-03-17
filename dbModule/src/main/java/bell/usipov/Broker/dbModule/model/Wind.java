@@ -1,4 +1,4 @@
-package bell.usipov.Broker.dbModule.model;
+package bell.usipov.broker.dbmodule.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,8 +22,6 @@ public class Wind implements Serializable {
     @JsonIgnore
     @Version
     private Integer version;
-
-
 
 
     /**

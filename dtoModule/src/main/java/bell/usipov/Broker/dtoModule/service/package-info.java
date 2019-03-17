@@ -1,4 +1,4 @@
 /**
  * Пакет сервисных классов
- * */
-package bell.usipov.Broker.dtoModule.service;
+ */
+package bell.usipov.broker.dtomodule.service;

@@ -1,10 +1,11 @@
-package bell.usipov.Broker.dtoModule.model;
+package bell.usipov.broker.dtomodule.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+
 /**
  * Модель погоды согластно структуре ответа Yahoo
  */

@@ -1,10 +1,11 @@
-package bell.usipov.Broker.dbModule.model;
+package bell.usipov.broker.dbmodule.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  * Текущая погода
  */
@@ -20,7 +21,6 @@ public class Observation implements Serializable {
     @JsonIgnore
     @Version
     private Integer version;
-
 
 
     /**

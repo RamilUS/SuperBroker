@@ -1,10 +1,10 @@
-package bell.usipov.Broker.dbModule.service;
+package bell.usipov.broker.dbmodule.service;
 
-import bell.usipov.Broker.dbModule.dao.DaoWeather;
-import bell.usipov.Broker.dbModule.maping.Mapper;
-import bell.usipov.Broker.dbModule.model.Location;
-import bell.usipov.Broker.dbModule.model.Weather;
-import bell.usipov.Broker.dtoModule.model.DtoWeather;
+import bell.usipov.broker.dbmodule.dao.DaoWeather;
+import bell.usipov.broker.dbmodule.maping.Mapper;
+import bell.usipov.broker.dbmodule.model.Location;
+import bell.usipov.broker.dbmodule.model.Weather;
+import bell.usipov.broker.dtomodule.model.DtoWeather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

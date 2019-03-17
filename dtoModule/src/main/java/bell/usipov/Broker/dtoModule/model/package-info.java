@@ -1,4 +1,4 @@
 /**
  * Пакет классов DTO
  */
-package bell.usipov.Broker.dtoModule.model;
+package bell.usipov.broker.dtomodule.model;

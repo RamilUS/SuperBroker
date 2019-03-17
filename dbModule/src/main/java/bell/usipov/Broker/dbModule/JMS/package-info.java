@@ -1,4 +1,4 @@
 /**
- * Пакет классов для работы с JMS
+ * Пакет классов для работы с jms
  */
-package bell.usipov.Broker.dbModule.JMS;
+package bell.usipov.broker.dbmodule.jms;

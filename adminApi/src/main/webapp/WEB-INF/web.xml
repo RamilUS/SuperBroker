@@ -6,7 +6,7 @@
         version="2.5">
   <servlet>
     <servlet-name>City</servlet-name>
-    <servlet-class>bell.usipov.Broker.admin.servlet.CityServlet</servlet-class>
+    <servlet-class>bell.usipov.broker.admin.servlet.CityServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>City</servlet-name>

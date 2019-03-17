@@ -13,7 +13,7 @@
         <module>yahooWeather</module>
         <module>dtoModule</module>
         <module>dbModule</module>
-        <module>WeatherService</module>
+        <module>weatherService</module>
     </modules>
 
     <properties>

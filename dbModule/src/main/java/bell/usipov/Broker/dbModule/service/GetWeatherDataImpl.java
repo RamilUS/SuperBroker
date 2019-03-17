@@ -1,11 +1,11 @@
-package bell.usipov.Broker.dbModule.service;
+package bell.usipov.broker.dbmodule.service;
 
-import bell.usipov.Broker.dbModule.dao.DaoWeather;
-import bell.usipov.Broker.dbModule.model.Location;
-import bell.usipov.Broker.dbModule.model.Weather;
-import bell.usipov.Broker.dtoModule.model.DtoLocation;
-import bell.usipov.Broker.dtoModule.model.DtoWeather;
-import bell.usipov.Broker.dtoModule.service.GetWeatherData;
+import bell.usipov.broker.dbmodule.dao.DaoWeather;
+import bell.usipov.broker.dbmodule.model.Location;
+import bell.usipov.broker.dbmodule.model.Weather;
+import bell.usipov.broker.dtomodule.model.DtoLocation;
+import bell.usipov.broker.dtomodule.model.DtoWeather;
+import bell.usipov.broker.dtomodule.service.GetWeatherData;
 import ma.glasnost.orika.MapperFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +15,12 @@ import java.util.List;
 
 @Service
 public class GetWeatherDataImpl implements GetWeatherData {
-  private final DaoWeather daoWeather;
+    private final DaoWeather daoWeather;
 
-  private final MapperFactory mapperFactory;
+    private final MapperFactory mapperFactory;
 
     @Autowired
-    public GetWeatherDataImpl(DaoWeather daoWeather, MapperFactory mapperFactory){
+    public GetWeatherDataImpl(DaoWeather daoWeather, MapperFactory mapperFactory) {
         this.daoWeather = daoWeather;
         this.mapperFactory = mapperFactory;
     }
@@ -31,7 +31,7 @@ public class GetWeatherDataImpl implements GetWeatherData {
     @Override
     public DtoWeather getWeather(String location) {
 
-        if(location == null || location.isEmpty()){
+        if (location == null || location.isEmpty()) {
             return new DtoWeather();
         }
 

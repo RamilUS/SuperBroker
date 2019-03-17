@@ -1,8 +1,8 @@
-package bell.usipov.Broker.dbModule;
+package bell.usipov.broker.dbmodule;
 
-import bell.usipov.Broker.dbModule.JMS.WeatherReceiver;
-import bell.usipov.Broker.dbModule.service.WeatherService;
-import bell.usipov.Broker.dtoModule.model.DtoWeather;
+import bell.usipov.broker.dbmodule.jms.WeatherReceiver;
+import bell.usipov.broker.dbmodule.service.WeatherService;
+import bell.usipov.broker.dtomodule.model.DtoWeather;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

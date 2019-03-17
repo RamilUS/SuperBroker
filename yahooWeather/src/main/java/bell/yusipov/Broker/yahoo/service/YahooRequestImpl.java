@@ -1,4 +1,4 @@
-package bell.yusipov.Broker.yahoo.service;
+package bell.yusipov.broker.yahoo.service;
 
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -10,12 +10,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.*;
 
+/**
+ * {@inheritDoc}
+ */
 @ApplicationScoped
 public class YahooRequestImpl implements YahooRequest {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
-    public String requestToYahoo(String location){
-        if (location==null|| location.isEmpty()){
+    public String requestToYahoo(String location) {
+        if (location == null || location.isEmpty()) {
             return "";
         }
         RestTemplate restTemplate = new RestTemplate();
@@ -39,7 +45,7 @@ public class YahooRequestImpl implements YahooRequest {
         HttpEntity<?> entity = createHeaders(appId, authorizationLine);
 
         ResponseEntity<String> responseEntity =
-                restTemplate.exchange(url + "?location=" + location +"&u=c&format=json",
+                restTemplate.exchange(url + "?location=" + location + "&u=c&format=json",
                         HttpMethod.GET,
                         entity,
                         String.class);
@@ -115,4 +121,5 @@ public class YahooRequestImpl implements YahooRequest {
         parameters.add("u=c");
         Collections.sort(parameters);
         return parameters;
-    }}
+    }
+}

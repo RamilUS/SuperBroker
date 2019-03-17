@@ -1,4 +1,4 @@
 /**
  * Пакет Dao-классов
  */
-package bell.usipov.Broker.dbModule.dao;
+package bell.usipov.broker.dbmodule.dao;

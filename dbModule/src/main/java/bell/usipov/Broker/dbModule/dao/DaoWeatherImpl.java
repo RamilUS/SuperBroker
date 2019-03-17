@@ -1,8 +1,8 @@
-package bell.usipov.Broker.dbModule.dao;
+package bell.usipov.broker.dbmodule.dao;
 
-import bell.usipov.Broker.dbModule.model.Forecast;
-import bell.usipov.Broker.dbModule.model.Location;
-import bell.usipov.Broker.dbModule.model.Weather;
+import bell.usipov.broker.dbmodule.model.Forecast;
+import bell.usipov.broker.dbmodule.model.Location;
+import bell.usipov.broker.dbmodule.model.Weather;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,13 +14,13 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Service
-public class DaoWeatherImpl implements DaoWeather{
+public class DaoWeatherImpl implements DaoWeather {
 
 
     @Resource(mappedName = "java:/entityManager")
     private EntityManager entityManager;
 
-    public DaoWeatherImpl(){
+    public DaoWeatherImpl() {
     }
 
     /**
@@ -29,7 +29,7 @@ public class DaoWeatherImpl implements DaoWeather{
     @Override
     public void save(Weather weather) {
 
-        if(checkNull(weather)){
+        if (checkNull(weather)) {
 
             return;
         }
@@ -45,7 +45,7 @@ public class DaoWeatherImpl implements DaoWeather{
     @Override
     public void update(Weather weather) {
 
-        if(checkNull(weather)){
+        if (checkNull(weather)) {
             return;
         }
         entityManager.merge(weather);
@@ -57,7 +57,7 @@ public class DaoWeatherImpl implements DaoWeather{
     @Override
     public Weather get(String location) {
 
-        if(location == null || location.isEmpty()){
+        if (location == null || location.isEmpty()) {
             return new Weather();
         }
 
@@ -67,8 +67,8 @@ public class DaoWeatherImpl implements DaoWeather{
 
         criteriaQuery.where(criteriaBuilder.equal(root.get("cityName"), location));
 
-        TypedQuery query = entityManager.createQuery(criteriaQuery);
-        return (Weather) query.getSingleResult();
+        TypedQuery<Weather> query = entityManager.createQuery(criteriaQuery);
+        return query.getSingleResult();
     }
 
     /**
@@ -89,10 +89,11 @@ public class DaoWeatherImpl implements DaoWeather{
 
     /**
      * Проверка на null значений в переданном объекте
+     *
      * @param weather - проверяемый объект
      * @return true, если переданное значение == null. false - если переданное значение != null
      */
-    private boolean checkNull(Weather weather){
+    private boolean checkNull(Weather weather) {
 
 
         return weather == null || weather.getCurrentObservation() == null
@@ -105,6 +106,7 @@ public class DaoWeatherImpl implements DaoWeather{
 
     /**
      * Установка зависимостей в зависимые объекты
+     *
      * @param weather - объект данных о погоде
      */
     private void setDependencies(Weather weather) {
@@ -119,7 +121,7 @@ public class DaoWeatherImpl implements DaoWeather{
         weather.getCurrentObservation().getWind().setObservation(weather.getCurrentObservation());
         weather.getCurrentObservation().getCondition().setObservation(weather.getCurrentObservation());
 
-        for(Forecast forecast : weather.getForecasts()){
+        for (Forecast forecast : weather.getForecasts()) {
             forecast.setWeather(weather);
         }
     }

@@ -1,7 +1,7 @@
-package bell.usipov.Broker.dtoModule.service;
+package bell.usipov.broker.dtomodule.service;
 
-import bell.usipov.Broker.dtoModule.model.DtoLocation;
-import bell.usipov.Broker.dtoModule.model.DtoWeather;
+import bell.usipov.broker.dtomodule.model.DtoLocation;
+import bell.usipov.broker.dtomodule.model.DtoWeather;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import java.util.List;
 public interface GetWeatherData {
     /**
      * Получение данных о погоде по названию города
+     *
      * @param location - название города
      * @return - объект с данными о погоде
      */
@@ -18,6 +19,7 @@ public interface GetWeatherData {
 
     /**
      * Получение списка доступных городов
+     *
      * @return - List<LocationDto>
      */
     List<DtoLocation> list();

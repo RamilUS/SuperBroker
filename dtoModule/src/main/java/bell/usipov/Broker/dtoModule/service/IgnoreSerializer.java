@@ -1,4 +1,4 @@
-package bell.usipov.Broker.dtoModule.service;
+package bell.usipov.broker.dtomodule.service;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,7 +17,7 @@ public class IgnoreSerializer extends JsonSerializer<String> {
                           JsonGenerator jsonGenerator,
                           SerializerProvider serializerProvider)
             throws IOException, JsonProcessingException {
-        if(!s.equals("IGNORE")) {
+        if (!s.equals("IGNORE")) {
             jsonGenerator.writeObject(s);
         }
     }

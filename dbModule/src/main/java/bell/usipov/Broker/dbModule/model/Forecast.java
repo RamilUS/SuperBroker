@@ -1,4 +1,4 @@
-package bell.usipov.Broker.dbModule.model;
+package bell.usipov.broker.dbmodule.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,7 +20,6 @@ public class Forecast implements Serializable {
     @JsonIgnore
     @Version
     private Integer version;
-
 
     /**
      * День недели

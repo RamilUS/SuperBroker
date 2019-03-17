@@ -1,4 +1,4 @@
-package bell.usipov.Broker.dtoModule.model;
+package bell.usipov.broker.dtomodule.model;
 
 import java.io.Serializable;
 import java.util.Objects;

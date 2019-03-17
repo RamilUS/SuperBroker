@@ -1,4 +1,4 @@
-package bell.usipov.Broker.dbModule.model;
+package bell.usipov.broker.dbmodule.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  * Модель города
  */
@@ -13,151 +14,149 @@ import java.util.Objects;
 @Table(name = "LOCATION")
 public class Location implements Serializable {
 
-        @JsonIgnore
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer id;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-        @JsonIgnore
-        @Version
-        private Integer version;
+    @JsonIgnore
+    @Version
+    private Integer version;
 
+    /**
+     * Идентификатор
+     */
+    @JsonProperty("woeid")
+    @Column(name = "woeid")
+    private Integer woeId;
 
+    /**
+     * Название города
+     */
+    @Column(name = "city", length = 50)
+    private String city;
 
-        /**
-         * Идентификатор
-         */
-        @JsonProperty("woeid")
-        @Column(name = "woeid")
-        private Integer woeId;
+    /**
+     * Регион
+     */
+    @Column(name = "region", length = 50)
+    private String region;
 
-        /**
-         * Название города
-         */
-        @Column(name = "city", length = 50)
-        private String city;
+    /**
+     * Страна
+     */
+    @Column(name = "country", length = 100)
+    private String country;
 
-        /**
-         * Регион
-         */
-        @Column(name = "region", length = 50)
-        private String region;
+    /**
+     * Широта
+     */
+    @Column(name = "lat")
+    private Double lat;
 
-        /**
-         * Страна
-         */
-        @Column(name = "country", length = 100)
-        private String country;
-
-        /**
-         * Широта
-         */
-        @Column(name = "lat")
-        private Double lat;
-
-        /**
-         * Долгота
-         */
-        @JsonProperty("long")
-        @Column(name = "long")
-        private Double lon;
+    /**
+     * Долгота
+     */
+    @JsonProperty("long")
+    @Column(name = "long")
+    private Double lon;
 
 
-        /**
-         * Часовой пояс
-         */
-        @JsonProperty("timezone_id")
-        @Column(name = "timezone_id")
-        private String timezoneId;
+    /**
+     * Часовой пояс
+     */
+    @JsonProperty("timezone_id")
+    @Column(name = "timezone_id")
+    private String timezoneId;
 
-        @JsonIgnore
-        @OneToOne()
-        @JoinColumn(name = "weather_id")
-        private Weather weather;
+    @JsonIgnore
+    @OneToOne()
+    @JoinColumn(name = "weather_id")
+    private Weather weather;
 
 
-        public Location() {
+    public Location() {
 
-        }
+    }
 
-        public Weather getWeather() {
+    public Weather getWeather() {
         return weather;
     }
 
-        public void setWeather(Weather weather) {
+    public void setWeather(Weather weather) {
         this.weather = weather;
     }
 
-        public Integer getWoeId() {
+    public Integer getWoeId() {
         return woeId;
     }
 
-        public void setWoeId(Integer woeId) {
+    public void setWoeId(Integer woeId) {
         this.woeId = woeId;
     }
 
-        public String getCity() {
+    public String getCity() {
         return city;
     }
 
-        public void setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-        public String getRegion() {
+    public String getRegion() {
         return region;
     }
 
-        public void setRegion(String region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
-        public String getCountry() {
+    public String getCountry() {
         return country;
     }
 
-        public void setCountry(String country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
-        public double getLat() {
+    public double getLat() {
         return lat;
     }
 
-        public void setLat(double lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
-        public double getLon() {
+    public double getLon() {
         return lon;
     }
 
-        public void setLon(double lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
-        public String getTimezoneId() {
+    public String getTimezoneId() {
         return timezoneId;
     }
 
-        public void setTimezoneId(String timezoneId) {
+    public void setTimezoneId(String timezoneId) {
         this.timezoneId = timezoneId;
     }
 
-        public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-        public Integer getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-        public void setVersion(Integer version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 
-        @Override
-        public String toString() {
+    @Override
+    public String toString() {
         return "LocationDto{" +
                 "woeId=" + woeId +
                 ", city='" + city + '\'' +
@@ -169,8 +168,8 @@ public class Location implements Serializable {
                 '}';
     }
 
-        @Override
-        public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Location location = (Location) o;
@@ -183,9 +182,9 @@ public class Location implements Serializable {
                 Objects.equals(timezoneId, location.timezoneId);
     }
 
-        @Override
-        public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(woeId, city, region, country, lat, lon, timezoneId);
     }
-    }
+}
 

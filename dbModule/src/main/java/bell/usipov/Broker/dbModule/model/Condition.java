@@ -1,10 +1,11 @@
-package bell.usipov.Broker.dbModule.model;
+package bell.usipov.broker.dbmodule.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  * Условия
  */
@@ -12,90 +13,89 @@ import java.util.Objects;
 @Table(name = "condition")
 public class Condition implements Serializable {
 
-        @JsonIgnore
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer id;
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-        @JsonIgnore
-        @Version
-        private Integer version;
+    @JsonIgnore
+    @Version
+    private Integer version;
 
 
+    /**
+     * Описание
+     */
+    @Column(name = "text", length = 50)
+    private String text;
 
-        /**
-         * Описание
-         */
-        @Column(name = "text", length = 50)
-        private String text;
+    /**
+     * Код
+     */
+    @Column(name = "code")
+    private Integer code;
 
-        /**
-         * Код
-         */
-        @Column(name = "code")
-        private Integer code;
+    /**
+     * Температура
+     */
+    @Column(name = "temperature")
+    private Integer temperature;
 
-        /**
-         * Температура
-         */
-        @Column(name = "temperature")
-        private Integer temperature;
+    @JsonIgnore
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "obs_id")
+    private Observation observation;
 
-        @JsonIgnore
-        @OneToOne(cascade = CascadeType.ALL)
-        @JoinColumn(name = "obs_id")
-        private Observation observation;
+    public Condition() {
 
-         public Condition() {
+    }
 
-         }
-
-        public Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-        public Integer getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-        public Observation getObservation() {
+    public Observation getObservation() {
         return observation;
     }
 
-        public void setVersion(Integer version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 
-        public void setObservation(Observation observation) {
+    public void setObservation(Observation observation) {
         this.observation = observation;
     }
 
-        public String getText() {
+    public String getText() {
         return text;
     }
 
-        public void setText(String text) {
+    public void setText(String text) {
         this.text = text;
     }
 
-        public Integer getCode() {
+    public Integer getCode() {
         return code;
     }
 
-        public void setCode(Integer code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-        public Integer getTemperature() {
+    public Integer getTemperature() {
         return temperature;
     }
 
-        public void setTemperature(Integer temperature) {
+    public void setTemperature(Integer temperature) {
         this.temperature = temperature;
     }
 
-        @Override
-        public String toString() {
+    @Override
+    public String toString() {
         return "ConditionDto{" +
                 "text='" + text + '\'' +
                 ", code=" + code +
@@ -103,8 +103,8 @@ public class Condition implements Serializable {
                 '}';
     }
 
-        @Override
-        public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Condition condition = (Condition) o;
@@ -116,8 +116,8 @@ public class Condition implements Serializable {
                 Objects.equals(observation, condition.observation);
     }
 
-        @Override
-        public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(id, version, text, code, temperature, observation);
     }
-    }
+}

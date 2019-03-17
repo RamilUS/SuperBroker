@@ -1,6 +1,6 @@
-package bell.usipov.Broker.admin.servlet;
+package bell.usipov.broker.admin.servlet;
 
-import bell.usipov.Broker.admin.jms.CitySender;
+import bell.usipov.broker.admin.jms.CitySender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

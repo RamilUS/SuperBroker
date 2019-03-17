@@ -1,9 +1,10 @@
-package bell.usipov.Broker.dtoModule.model;
+package bell.usipov.broker.dtomodule.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  * Модель города
  */
@@ -49,7 +50,7 @@ public class DtoLocation implements Serializable {
 
     private String timezoneId;
 
-    public DtoLocation(){
+    public DtoLocation() {
 
     }
 

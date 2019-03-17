@@ -1,7 +1,8 @@
-package bell.usipov.Broker.dbModule;
+package bell.usipov.broker.dbmodule;
 
-import bell.usipov.Broker.dbModule.dao.DaoWeatherImpl;
-import bell.usipov.Broker.dbModule.model.*;
+import bell.usipov.broker.dbmodule.dao.DaoWeatherImpl;
+
+import bell.usipov.broker.dbmodule.model.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

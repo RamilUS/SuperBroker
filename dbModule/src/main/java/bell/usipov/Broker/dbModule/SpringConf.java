@@ -1,7 +1,7 @@
-package bell.usipov.Broker.dbModule;
+package bell.usipov.broker.dbmodule;
 
-import bell.usipov.Broker.dbModule.JMS.WeatherReceiver;
-import bell.usipov.Broker.dtoModule.service.GetWeatherData;
+import bell.usipov.broker.dbmodule.jms.WeatherReceiver;
+import bell.usipov.broker.dtomodule.service.GetWeatherData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +23,7 @@ import javax.jms.Queue;
 @Configuration
 @EnableJms
 @EnableTransactionManagement
-@ComponentScan(basePackages ={"bell.usipov.Broker.dbModule"})
+@ComponentScan(basePackages = {"bell.usipov.broker.dbmodule"})
 public class SpringConf {
 
     @Autowired
@@ -36,10 +36,9 @@ public class SpringConf {
     private Queue queue;
 
     @Bean
-    public WeatherReceiver receiver(){
+    public WeatherReceiver receiver() {
         return new WeatherReceiver();
     }
-
 
 
     @Bean(name = "/WeatherService")
@@ -53,7 +52,6 @@ public class SpringConf {
     @Bean
     public DefaultMessageListenerContainer listenerContainerFactory() {
         DefaultMessageListenerContainer factory = new DefaultMessageListenerContainer();
-        System.out.println("*************************************************************" + connectionFactory);
         factory.setConnectionFactory(connectionFactory);
         factory.setDestination(queue);
         factory.setMessageListener(receiver());

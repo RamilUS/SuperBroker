@@ -1,4 +1,4 @@
 /**
- * Пакет интерфейсов и классов для работы с bell.usipov.Broker.yahoo.jms
+ * Пакет интерфейсов и классов для работы с jms
  */
-package bell.usipov.Broker.admin.jms;
+package bell.usipov.broker.admin.jms;
