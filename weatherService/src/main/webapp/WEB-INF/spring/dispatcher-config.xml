@@ -15,7 +15,7 @@
     <mvc:annotation-driven />
 
     <bean id="getWeatherData" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
-        <property name="serviceUrl" value="http://localhost:8080/dtoModule/remoting/WeatherService"/>
+        <property name="serviceUrl" value="http://localhost:8080/dbModule/remoting/WeatherService"/>
         <property name="serviceInterface" value="bell.usipov.broker.dtomodule.service.GetWeatherData"/>
     </bean>
 </beans>
